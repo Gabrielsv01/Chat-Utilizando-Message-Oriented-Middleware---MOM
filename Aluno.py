@@ -14,8 +14,8 @@ class TH_server(Thread):
 
         def callback(ch, method, properties, body):
 
-            print("                         %s" % body.decode())
-            print("\n")
+            print("                                   %s" % body.decode())
+            #print("\n")
 
         connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
         channel = connection.channel()
@@ -60,7 +60,7 @@ class TH_send(Thread):
             b = input("")
 
             if b == 'f':
-                Enviar(channel,"O Aluno saiu da conversa.")
+                Enviar(channel,"\n O Aluno saiu da conversa.")
                 Sair(connection)
                 print(" ### Voce saiu da conversa ### ")
                 break
